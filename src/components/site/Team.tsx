@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { User } from "lucide-react";
-import fazalImg from "@/assets/team-fazal.png";
+import fazalImg from "@/assets/team-fazal.jpg";
 
 const TEAM = [
   {
@@ -51,6 +51,7 @@ export function Team() {
                     src={m.image}
                     alt={m.name}
                     loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover group-hover:scale-105 transition duration-500"
                   />
                 ) : (

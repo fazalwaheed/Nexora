@@ -1,6 +1,24 @@
 import { motion } from "framer-motion";
-import * as Icons from "lucide-react";
+import {
+  Brain,
+  Code2,
+  Layers,
+  MessageSquare,
+  Palette,
+  Sparkles,
+  Zap,
+} from "lucide-react";
 import { SERVICES } from "@/lib/data";
+
+const ICONS = {
+  Brain,
+  Code2,
+  Layers,
+  MessageSquare,
+  Palette,
+  Sparkles,
+  Zap,
+} satisfies Record<string, React.ComponentType<{ className?: string }>>;
 
 export function Services() {
   return (
@@ -18,7 +36,7 @@ export function Services() {
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s, i) => {
-            const Icon = (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[s.icon] ?? Icons.Sparkles;
+            const Icon = ICONS[s.icon] ?? Sparkles;
             return (
               <motion.div
                 key={s.title}

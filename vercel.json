@@ -1,12 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "vite",
+  "framework": "other",
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/client",
   "rewrites": [
     {
-      "source": "/((?!assets/|favicon.ico|robots.txt|sitemap.xml|Fazal_Waheed_Resume.pdf).*)",
-      "destination": "/index.html"
+      "source": "/(.*)",
+      "destination": "/api/$1"
     }
   ]
 }
